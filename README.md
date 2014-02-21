@@ -28,4 +28,6 @@ The design began with the prelab, or the construction of a 1 bit full adder. Thi
 
 The 4 bit adder was built using structural programming, with the components of the full adder being made of 4 1 bit adders. Ain and Bin were input via the switches, and the carry out values of the adders were fed into the next adder as can be seen below.
 
+![alt text](http://i62.tinypic.com/20u90mf.png)
+
 To implement the subtraction functionality, another input via button press was defined. When this button was pressed, it started a process of inverting Bin and then adding a binary value of 1 to the input array. This in turn converted the input into a negative 2's complement of itself, which when added to Ain served as a way to subtract B from A
