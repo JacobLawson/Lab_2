@@ -22,12 +22,13 @@ The results of the truth table when compared to the actual simulation results ar
 ##  
 -----------------------------------------------------------------------------------------
 
-![alt text](http://i61.tinypic.com/fvfm7q.png)
-
-
 ## Discussion of Main Lab
 
-THe purpose of this lab was to build a 4 bit adder, and then implement said 4 bit adder into a subtractor when a certain input was pressed. Another goal was to detect overflow and make a self checking testbench.
+The purpose of this lab was to build a 4 bit adder, and then implement said 4 bit adder into a subtractor when a certain input was pressed. Another goal was to detect overflow and make a self checking testbench. The results of the simulation can be seen below
+
+![alt text](http://i61.tinypic.com/fvfm7q.png)
+
+Because of the high amount of combinations that could be found in the truth table, I just checked a few of the combinations at random and checked to see if the outputs were correct. After about 10 successful checks, I was able to reasonably assume the simulation was correct and moved on.
 
 The design began with the prelab, or the construction of a 1 bit full adder. This was done in a behavioral sense and all the gates and outputs/signals were defined. After verifying the design of the 1 bit adder and getting a better understanding of it, the 1 bit adder was modularized in a sense to build the 4 bit adder.
 
