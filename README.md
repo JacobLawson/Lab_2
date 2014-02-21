@@ -1,4 +1,4 @@
-Lab_2
+Lab 2
 =====
 
 | Inputs  |  | | Outputs| |
@@ -13,11 +13,16 @@ Lab_2
 | 1          |1       |0       |0       |1       |
 | 1          |1       |1       |1       |1       |
 
-
 ## Discussion of PreLab
-The results of the truth table when compared to the actual simulation results are very promising. I went through each line individually along with the truth table to compare results, and all of the outputs match up with the prescribed inputs.
+The results of the truth table when compared to the actual simulation results are very promising. I went through each line individually along with the truth table to compare results, and all of the outputs match up with the prescribed inputs. The schematic of the full adder an be seen below
 
-![alt  text](http://i61.tinypic.com/fvfm7q.png)
+![alt text](http://i62.tinypic.com/bi72m9.jpg)
+
+-----------------------------------------------------------------------------------------
+##  
+-----------------------------------------------------------------------------------------
+
+![alt text](http://i61.tinypic.com/fvfm7q.png)
 
 
 ## Discussion of Main Lab
