@@ -1,6 +1,8 @@
 Lab 2
 =====
 
+The truth table of the full adder along with waveform can be seen below
+
 | Inputs  |  | | Outputs| |
 | ------------- |:-------------:| :-----:| :-----:| -----:|
 | Ain          |Bin       |Cin       |Sum       |Cout       |
@@ -12,6 +14,8 @@ Lab 2
 | 1          |0       |1       |0       |1       |
 | 1          |1       |0       |0       |1       |
 | 1          |1       |1       |1       |1       |
+
+![alt text](http://i59.tinypic.com/2n9dun5.png)
 
 ## Discussion of PreLab
 The results of the truth table when compared to the actual simulation results are very promising. I went through each line individually along with the truth table to compare results, and all of the outputs match up with the prescribed inputs. The schematic of the full adder an be seen below
