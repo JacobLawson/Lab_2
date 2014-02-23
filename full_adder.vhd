@@ -29,7 +29,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity Full_Adder is
+entity Full_Adder is            --The design takes 2 inputs, and adds them 
+                                --together along with a carry in. The sum and carry are the resulting outputs
     Port ( Ain : in  STD_LOGIC;
            Bin : in  STD_LOGIC;
            Cin : in  STD_LOGIC;
@@ -39,11 +40,15 @@ end Full_Adder;
 
 architecture Behavioral of Full_Adder is
 
+--These are the internal signals or wires needed to be declared in order to complete the circuit.
+
 Signal AB : std_logic;
 Signal ACin : std_logic;
 Signal BCin : std_logic;
 
 begin
+
+--These are just the logic operations used to compute the signals/wires, which are then used to compute the output.
 
 AB <= Ain and Bin;
 ACin <= Ain and Cin;
