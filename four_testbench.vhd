@@ -31,6 +31,8 @@ USE ieee.std_logic_1164.ALL;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 USE ieee.numeric_std.ALL;
+USE ieee.std_logic_arith.ALL;
+USE ieee.std_logic_unsigned.ALL;
  
 ENTITY four_testbench IS
 END four_testbench;
@@ -91,11 +93,32 @@ BEGIN
                          end loop;
                                 
                    Ain <= std_logic_vector(to_signed(i,4));
+						 
+						 assert Sum=Ain+Bin report "incorrect! A is " 
+	
+	& std_logic'image(Ain(3)) & std_logic'image(Ain(2)) & std_logic'image(Ain(1)) & std_logic'image(Ain(0)) & "B is " 
+	& std_logic'image(Bin(3)) & std_logic'image(Bin(2)) & std_logic'image(Bin(1)) & std_logic'image(Bin(0));
 								 end loop;
+
+sub <= '1';
 
 wait for 10 ns;
 
-
+   for i in 0 to 15 loop
+                                
+        for j in 0 to 15 loop
+                                
+             wait for 10 ns;
+                                                
+                   Bin <= std_logic_vector(to_signed(j,4));
+                         end loop;
+                                
+                   Ain <= std_logic_vector(to_signed(i,4));
+						 assert Sum=Ain-Bin report "incorrect! A is " 
+	
+	& std_logic'image(Ain(3)) & std_logic'image(Ain(2)) & std_logic'image(Ain(1)) & std_logic'image(Ain(0)) & "B is " 
+	& std_logic'image(Bin(3)) & std_logic'image(Bin(2)) & std_logic'image(Bin(1)) & std_logic'image(Bin(0));
+								 end loop;
       -- insert stimulus here 
 
       wait;
