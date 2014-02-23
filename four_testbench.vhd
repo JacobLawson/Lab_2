@@ -83,16 +83,19 @@ BEGIN
    begin		
       -- hold reset state for 100 ns.
 
-   for i in 0 to 15 loop
+   for i in 0 to 15 loop			--The for loops just goes through every combination of numbers
                                 
         for j in 0 to 15 loop
                                 
              wait for 10 ns;
                                                 
-                   Bin <= std_logic_vector(to_signed(j,4));
+                   Bin <= std_logic_vector(to_signed(j,4));	
                          end loop;
                                 
                    Ain <= std_logic_vector(to_signed(i,4));
+                   
+                   --This is the self check part. It checks to see if the value is correct first,
+                   --and will produce the correct output when needed.
 						 
 						 assert Sum=Ain+Bin report "incorrect! A is " 
 	
