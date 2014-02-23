@@ -19,8 +19,8 @@ NET "Sub" LOC = "H13"; # Type = INPUT, Btn name = BTN3
 
 # Connecting a std_logic_vector to output pins
 
-NET "Overflow"  LOC = "R4";  # Sch name = LD7
-NET "Sum<3>"  LOC = "K14";  # Sch name = LD3
-NET "Sum<2>"  LOC = "K15"; # Sch name = LD2
-NET "Sum<1>"  LOC = "J15";  # Sch name = LD1
-NET "Sum<0>"  LOC = "J14";  # Sch name = LD0
+NET "Overflow"  LOC = "R4";  # Type = OUTPUT, LED name = LD7
+NET "Sum<3>"  LOC = "K14";  # Type = OUTPUT, LED name = LD3
+NET "Sum<2>"  LOC = "K15"; # Type = OUTPUT, LED name = LD2
+NET "Sum<1>"  LOC = "J15";  # Type = OUTPUT, LED name = LD1
+NET "Sum<0>"  LOC = "J14";  # Type = OUTPUT, LED name = LD0
