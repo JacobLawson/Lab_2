@@ -29,7 +29,7 @@ use IEEE.NUMERIC_STD.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity add_sub is
+entity add_sub is -- This is the 4 bit adder design. It has 2 4 bit inputs which it adds together to produce 1 4 bit output
     Port ( Ain : in  STD_LOGIC_VECTOR (3 downto 0);
            Bin : in  STD_LOGIC_VECTOR (3 downto 0);
            Sum : out  STD_LOGIC_VECTOR (3 downto 0);
@@ -40,7 +40,8 @@ end add_sub;
 
 architecture Structural of add_sub is
 
-component Full_Adder is
+component Full_Adder is 		-- The design is structural, so it uses 4 blocks of full adders, 1 for each bit. Each adder adds up the bit it is assigned
+					--and then produces it's outputs to the next block
 		port (Ain : in STD_LOGIC;
 				Bin : in STD_LOGIC;
 				Cin : in STD_LOGIC;
@@ -49,9 +50,9 @@ component Full_Adder is
 				
 end component Full_Adder;
 
-Signal Carry : STD_LOGIC_VECTOR (3 downto 0);
-Signal Store : STD_LOGIC_VECTOR (3 downto 0);
-Signal Bcomp : STD_LOGIC_VECTOR (3 downto 0);
+Signal Carry : STD_LOGIC_VECTOR (3 downto 0); --Cin could not be used as an output, so another carry array was needed 
+Signal Store : STD_LOGIC_VECTOR (3 downto 0); --Stored the input of B so that 2's complement conversion could be performed on it
+Signal Bcomp : STD_LOGIC_VECTOR (3 downto 0); --This was the vector that was actually added. Its value changed depending on if sub=1. Sub was determined by a button press
 
 begin
 
@@ -59,8 +60,10 @@ Store <= Bin;
 
 Bcomp <= Store when Sub= '0'
 					else STD_LOGIC_VECTOR (SIGNED(not Store)+1) when Sub ='1';
-					
-Bit0: component Full_Adder
+	
+--Each individual bit was then calculated by declaring the port map of each adder below.
+
+Bit0: component Full_Adder 
 	PORT MAP(Ain => Ain(0),
 				Bin => Bcomp(0),
 				Cin => '0',
@@ -91,6 +94,9 @@ Bit3: component Full_Adder
 				Sum => Sum(3),
 				Cout => Carry(3)
 				);
+
+--Overflow was then calculated by the statement below. More discussion about why this was done can be found in the readme.
+
 				
 Overflow <= Carry(3) xor Carry(2);
 			
